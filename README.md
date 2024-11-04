@@ -25,12 +25,16 @@ pip install -r requirements/generated/requirements.txt
 To run the application, call password_validator.py with the password given as an arguement:
 
 ```shell
-python3 app/password_validator.py password123456_
+python3 app/password_validator.py Password123456_
 ```
 
 ### Testing
 
+To test the application run:
 
+```shell
+pytest
+```
 
 ### Linting and formatting
 
