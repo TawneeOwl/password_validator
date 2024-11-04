@@ -1,4 +1,14 @@
-from app.password_validator import CheckPassword
+from app.password_validator import CheckPassword, main
+
+def test_main():
+    # Checks the main function with valid passwords
+    valid_password_list = ["Password123456_","123456_Password","__123paSS"]
+    for password in valid_password_list:
+        assert main(password)
+    # Checks the main function with invalid passwords
+    invalid_password_list = ["password12356_","Pass1_","PAss_"]
+    for password in invalid_password_list:
+        assert not main(password)
 
 def test_valid_password():
     # Tests a valid password

@@ -42,9 +42,9 @@ class CheckPassword:
         return any(char in specific_char for char in self.password)
 
 
-def main():
+def main(password=None):
     """
-    This function checks a password passed in.
+    Check the validity of a password parsed.
 
     Args:
         password: Password data as a string.
@@ -53,12 +53,11 @@ def main():
         boolean: Returns True or False based on password validation
         str: Prints a string whether the password is valid or not
     """
-    "Check the validity of a password parsed via the CLI"
-    parser = argparse.ArgumentParser("Validate a password")
-    parser.add_argument("password", type=str)
-    args = parser.parse_args()
-
-    password = args.password
+    if password is None:
+        parser = argparse.ArgumentParser("Validate a password")
+        parser.add_argument("password", type=str)
+        args = parser.parse_args()
+        password = args.password
 
     if CheckPassword(password).is_valid():
         print("Valid Password")
