@@ -18,7 +18,7 @@ class CheckPassword:
             and self.has_capital()
             and self.has_lower_case()
             and self.has_number()
-            and self.has_other_char()
+            and self.has_specific_char()
         )
 
     def has_correct_length(self, min_length=8):
