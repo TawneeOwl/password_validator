@@ -31,7 +31,7 @@ def test_password_number():
     password = "Password_"
     assert CheckPassword(password).is_valid() == False
 
-def test_password_other_char():
+def test_password_specific_char():
     # Test no _ character
     password = "Password123456"
     assert CheckPassword(password).is_valid() == False

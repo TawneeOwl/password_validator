@@ -37,9 +37,9 @@ class CheckPassword:
         "Checks if any of the characters in the password are digits (numbers)"
         return any(char.isdigit() for char in self.password)
 
-    def has_other_char(self, other_char="_"):
-        "Checks if the password contains other characters outside of the alphabet"
-        return any(char in other_char for char in self.password)
+    def has_specific_char(self, specific_char="_"):
+        "Checks if the password contains specific characters"
+        return any(char in specific_char for char in self.password)
 
 
 def main():
@@ -50,8 +50,8 @@ def main():
         password: Password data as a string.
 
     Returns:
-        boolean & str: Return string and boolean
-        based on the passed in password.
+        boolean: Returns True or False based on password validation
+        str: Prints a string whether the password is valid or not
     """
     "Check the validity of a password parsed via the CLI"
     parser = argparse.ArgumentParser("Validate a password")
